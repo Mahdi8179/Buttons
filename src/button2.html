@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button 2</title>
+  <script src="https://kit.fontawesome.com/af123413dd.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #fff;
+    }
+
+    /* دکمه اصلی */
+    .button-container {
+      position: relative;
+      width: 270px;
+      height: 110px;
+      border-radius: 25px;
+      background-color: #fff;
+      border: 2px solid #e0dfdf; /* خط حاشیه */
+      outline: 1px solid #ffffff;
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    /* افکت هاور برای سایه و بزرگنمایی */
+    .button-container:hover {
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2),
+                  -5px -5px 15px rgba(255, 255, 255, 0.7);
+      transform: translateY(-5px); /* کمی بالاتر آمدن */
+    }
+
+    /* استایل نئومورفیسم مستطیل متن */
+    .button-inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px 70px;
+      background: #fafafacd;
+      border-radius: 20px;
+      box-shadow: 12.01px 12.01px 12px #d5d7da7d, -12.01px -12.01px 12px #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.5s ease, opacity 0.4s ease;
+    }
+
+    /* متن دکمه */
+    .button-inner span {
+      font-size: 24px;
+      font-weight: bold;
+      color: #22577a;
+    }
+
+    /* تغییرات هنگام هاور */
+    .button-container:hover .button-inner {
+      transform: translate(-50%, -150%) scale(0.95); /* حرکت به بالا و کوچک‌شدن */
+      box-shadow: 6px 9px 16px 9px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 1);
+    }
+
+    /* آیکون‌ها */
+    .icon-container {
+      position: absolute;
+      bottom: 0;
+      left: 35px;
+      width: 75%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.2s ease, transform 0.6s ease;
+      transform: translateY(20px); /* حرکت اولیه کمی پایین‌تر */
+    }
+
+    /* نمایش نرم آیکون‌ها */
+    .button-container:hover .icon-container {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .icon {
+      font-size: 40px;
+      color: #390099; /* بین آبی پررنگ و بنفش */
+      text-shadow: -2px 12px 20px #382557b8;
+      transition: color 0.3s ease; /* تغییر رنگ در هاور */
+    }
+
+    .icon:hover {
+      color: #390099; /* رنگ روشن‌تر در هاور */
+    }
+
+    /* تنظیمات ریسپانسیو */
+    @media (max-width: 400px) {
+      .button-container {
+        width: 220px;
+        height: 90px;
+      }
+
+      .button-inner {
+        padding: 20px 60px;
+      }
+
+      .button-inner span {
+        font-size: 18px;
+      }
+
+      .icon {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <div class="button-inner">
+      <span>Share</span>
+    </div>
+    <div class="icon-container">
+      <span class="icon"><i class="fab fa-whatsapp"></i></span>
+      <span class="icon"><i class="fab fa-instagram"></i></span>
+      <span class="icon"><i class="fa-brands fa-x-twitter"></i></span>
+      <span class="icon"><i class="fa-brands fa-facebook-f"></i></span>
+    </div>
+  </div>
+</body>
+</html>
